@@ -1059,6 +1059,7 @@ footer a:hover{{color:var(--accent)}}
         <div class="scard-sub">Official + verified</div>
         <div class="scard-bar"><div class="scard-bar-fill" style="width:{round(mcp_count/total*100)}%"></div></div>
       </div>
+    </div>
 
     <!-- Charts -->
 
