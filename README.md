@@ -3,7 +3,7 @@
 > Agent-powered research across 100 apps, 10 categories — auth patterns, self-serve vs gated, API surfaces, buildability verdicts.
 
 ## Live Demo
-**[→ View the Case Study](https://[your-github-username].github.io/Assignment/)**
+**[→ View the Case Study](https://17AnuragMishra.github.io/composio-assignment/)**
 
 ## What This Does
 
