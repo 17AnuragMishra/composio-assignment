@@ -57,7 +57,23 @@ def mcp_cell(has):
 
 def conf_cell(c):
     cls = {'High': 'conf-high', 'Medium': 'conf-med', 'Low': 'conf-low'}.get(c, 'conf-low')
-    return f'<span class="conf-dot {cls}"></span> {c}'
+    return f'<span class="conf-pill {cls}">{c}</span>'
+
+
+def cat_class(cat):
+    m = {
+        'CRM and Sales': 'cat-crm',
+        'Support and Helpdesk': 'cat-support',
+        'Communications and Messaging': 'cat-comms',
+        'Marketing, Ads, Email and Social': 'cat-marketing',
+        'Ecommerce': 'cat-ecomm',
+        'Data, SEO and Scraping': 'cat-data',
+        'Developer, Infra and Data': 'cat-dev',
+        'Productivity and Project Management': 'cat-prod',
+        'Finance and Fintech': 'cat-finance',
+        'AI, Research and Media': 'cat-ai',
+    }
+    return m.get(cat, '')
 
 
 def rows_html(results):
@@ -71,11 +87,12 @@ def rows_html(results):
         mcp = r.get('has_mcp', False)
         blocker = r.get('main_blocker') or '—'
         docs = r.get('docs_url', '#')
+        cc = cat_class(cid)
         
         row = f"""<tr data-cat="{cid}" data-build="{bid}" data-auth="{auth_list}" data-ss="{ss}">
   <td class="col-id">{r.get('id','')}</td>
   <td class="col-name"><a href="{docs}" target="_blank" rel="noopener" class="app-link">{r.get('name','')}</a></td>
-  <td class="col-cat"><span class="cat-pill">{cid}</span></td>
+  <td class="col-cat"><span class="cat-pill {cc}">{cid}</span></td>
   <td class="col-desc">{r.get('description','')}</td>
   <td class="col-auth">{auth_badges(r.get('auth_methods', []))}</td>
   <td class="col-ss">{ss_cell(ss, ss_notes)}</td>
@@ -241,36 +258,53 @@ section+section{{border-top:1px solid var(--border)}}
 }}
 
 /* ════════════════════════════════════════════════════
+   SCROLL PROGRESS
+════════════════════════════════════════════════════ */
+#scroll-prog{{
+  position:fixed;top:0;left:0;z-index:9999;
+  height:2px;width:0%;background:linear-gradient(90deg,var(--accent),var(--purple));
+  transition:width .05s linear;
+  box-shadow:0 0 8px var(--accent);
+}}
+
+/* ════════════════════════════════════════════════════
    NAV
 ════════════════════════════════════════════════════ */
 nav{{
   position:sticky;top:0;z-index:200;
-  background:rgba(8,11,18,0.88);
-  backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);
+  background:rgba(8,11,18,0.9);
+  backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);
   border-bottom:1px solid var(--border);
 }}
 .nav-inner{{
   max-width:1440px;margin:0 auto;padding:0 28px;
-  height:52px;display:flex;align-items:center;gap:28px;
+  height:54px;display:flex;align-items:center;gap:28px;
 }}
 .nav-brand{{
-  font-size:14px;font-weight:750;letter-spacing:-0.3px;
-  color:var(--text);display:flex;align-items:center;gap:8px;
+  font-size:14px;font-weight:800;letter-spacing:-0.4px;
+  color:var(--text);display:flex;align-items:center;gap:10px;
 }}
 .nav-brand-dot{{
   width:8px;height:8px;border-radius:50%;background:var(--accent);
-  box-shadow:0 0 8px var(--accent);
+  box-shadow:0 0 10px var(--accent),0 0 20px rgba(75,142,240,0.4);
+  animation:glow-pulse 2.5s ease-in-out infinite;
 }}
-.nav-links{{display:flex;gap:20px;margin-left:auto}}
+@keyframes glow-pulse{{
+  0%,100%{{box-shadow:0 0 6px var(--accent),0 0 14px rgba(75,142,240,0.3)}}
+  50%{{box-shadow:0 0 14px var(--accent),0 0 28px rgba(75,142,240,0.5)}}
+}}
+.nav-links{{display:flex;gap:4px;margin-left:auto}}
 .nav-links a{{
   color:var(--text3);font-size:12.5px;font-weight:500;
-  transition:color .18s;
+  padding:5px 12px;border-radius:6px;
+  transition:color .18s,background .18s;
 }}
-.nav-links a:hover{{color:var(--text);text-decoration:none}}
+.nav-links a:hover{{color:var(--text);background:var(--surface3);text-decoration:none}}
+.nav-links a.nav-active{{color:var(--accent);background:rgba(75,142,240,0.08)}}
 .nav-badge{{
-  margin-left:8px;background:var(--surface3);border:1px solid var(--border2);
-  color:var(--text2);font-size:10px;font-weight:700;
-  padding:2px 7px;border-radius:100px;letter-spacing:0.3px;
+  margin-left:4px;background:rgba(75,142,240,0.1);border:1px solid rgba(75,142,240,0.2);
+  color:var(--accent);font-size:10px;font-weight:700;
+  padding:3px 9px;border-radius:100px;letter-spacing:0.4px;
 }}
 @media(max-width:640px){{.nav-links{{display:none}}}}
 
@@ -278,52 +312,69 @@ nav{{
    HERO
 ════════════════════════════════════════════════════ */
 .hero{{
-  padding:88px 0 72px;
+  padding:96px 0 80px;
   background:
-    radial-gradient(ellipse 70% 50% at 50% -5%, rgba(75,142,240,0.1) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 30% at 20% 60%, rgba(167,139,250,0.04) 0%, transparent 60%);
+    radial-gradient(ellipse 80% 60% at 50% -10%, rgba(75,142,240,0.13) 0%, transparent 65%),
+    radial-gradient(ellipse 50% 40% at 85% 50%, rgba(167,139,250,0.06) 0%, transparent 55%),
+    radial-gradient(ellipse 35% 25% at 10% 80%, rgba(45,212,191,0.04) 0%, transparent 50%);
   position:relative;overflow:hidden;
 }}
-.hero::before{{
-  content:'';position:absolute;inset:0;
-  background:url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%234b8ef0' fill-opacity='0.02'%3E%3Ccircle cx='30' cy='30' r='1'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-  pointer-events:none;
+.hero-orb{{
+  position:absolute;border-radius:50%;filter:blur(60px);pointer-events:none;
+  animation:float-orb 8s ease-in-out infinite;
+}}
+.hero-orb-1{{width:400px;height:400px;background:rgba(75,142,240,0.06);top:-100px;right:5%;}}
+.hero-orb-2{{width:300px;height:300px;background:rgba(167,139,250,0.05);bottom:-50px;right:25%;animation-delay:-3s;}}
+@keyframes float-orb{{
+  0%,100%{{transform:translateY(0) scale(1)}}
+  50%{{transform:translateY(-20px) scale(1.05)}}
 }}
 .hero-eyebrow{{
   display:inline-flex;align-items:center;gap:8px;
-  background:rgba(75,142,240,0.1);border:1px solid rgba(75,142,240,0.22);
+  background:rgba(75,142,240,0.08);border:1px solid rgba(75,142,240,0.2);
   color:var(--accent);font-size:11px;font-weight:700;
-  padding:5px 13px;border-radius:100px;letter-spacing:0.8px;
-  text-transform:uppercase;margin-bottom:24px;
+  padding:6px 14px;border-radius:100px;letter-spacing:0.8px;
+  text-transform:uppercase;margin-bottom:28px;
+  box-shadow:0 0 20px rgba(75,142,240,0.08);
 }}
-.hero-eyebrow::before{{content:'●';font-size:8px;animation:pulse 2s infinite}}
-@keyframes pulse{{0%,100%{{opacity:1}}50%{{opacity:0.4}}}}
+.hero-eyebrow-dot{{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:pulse 2s infinite}}
+@keyframes pulse{{0%,100%{{opacity:1;transform:scale(1)}}50%{{opacity:0.5;transform:scale(0.85)}}}}
 .hero h1{{
-  font-size:clamp(36px,5.5vw,64px);font-weight:900;
-  letter-spacing:-2px;line-height:1.03;color:var(--text);
-  max-width:820px;margin-bottom:20px;
+  font-size:clamp(38px,5.5vw,68px);font-weight:900;
+  letter-spacing:-2.5px;line-height:1.02;color:var(--text);
+  max-width:860px;margin-bottom:22px;
 }}
-.hero h1 .hl{{color:var(--accent)}}
+.hero h1 .hl{{
+  color:var(--accent);
+  text-shadow:0 0 40px rgba(75,142,240,0.3);
+}}
 .hero-sub{{
-  font-size:clamp(14px,2vw,17px);color:var(--text2);
-  max-width:580px;line-height:1.7;margin-bottom:40px;font-weight:400;
+  font-size:clamp(14px,1.8vw,17px);color:var(--text2);
+  max-width:560px;line-height:1.72;margin-bottom:48px;font-weight:400;
 }}
-.hero-kpis{{display:flex;gap:0;flex-wrap:wrap;margin-bottom:0}}
+.hero-kpis{{
+  display:flex;gap:0;flex-wrap:wrap;
+  background:rgba(15,20,34,0.6);backdrop-filter:blur(12px);
+  border:1px solid var(--border2);border-radius:14px;
+  display:inline-flex;overflow:hidden;
+}}
 .hero-kpi{{
-  padding:20px 28px;border-right:1px solid var(--border);
-  display:flex;flex-direction:column;gap:4px;
+  padding:22px 28px;border-right:1px solid var(--border);
+  display:flex;flex-direction:column;gap:5px;
+  transition:background .2s;
 }}
-.hero-kpi:first-child{{padding-left:0}}
+.hero-kpi:hover{{background:rgba(75,142,240,0.04)}}
 .hero-kpi:last-child{{border-right:none}}
 .kpi-val{{
-  font-size:clamp(28px,4vw,40px);font-weight:900;
+  font-size:clamp(26px,3.5vw,38px);font-weight:900;
   letter-spacing:-1.5px;line-height:1;
+  font-variant-numeric:tabular-nums;
 }}
-.kpi-label{{font-size:11px;color:var(--text3);font-weight:500;text-transform:uppercase;letter-spacing:0.7px}}
-.kpi-sub{{font-size:12px;color:var(--text2)}}
+.kpi-label{{font-size:10.5px;color:var(--text3);font-weight:600;text-transform:uppercase;letter-spacing:0.9px}}
+.kpi-sub{{font-size:11.5px;color:var(--text2)}}
 @media(max-width:640px){{
-  .hero-kpis{{flex-direction:column;gap:0}}
-  .hero-kpi{{border-right:none;border-bottom:1px solid var(--border);padding:14px 0}}
+  .hero-kpis{{flex-direction:column;border-radius:10px;width:100%}}
+  .hero-kpi{{border-right:none;border-bottom:1px solid var(--border);padding:14px 16px}}
   .hero-kpi:last-child{{border-bottom:none}}
 }}
 
@@ -354,26 +405,40 @@ nav{{
 }}
 .pcard{{
   background:var(--surface);border:1px solid var(--border);border-radius:var(--r);
-  padding:22px;position:relative;overflow:hidden;
-  transition:border-color .2s,transform .2s;
+  padding:24px 24px 20px;position:relative;overflow:hidden;
+  transition:border-color .25s,transform .25s,box-shadow .25s;
 }}
-.pcard:hover{{border-color:var(--border3);transform:translateY(-2px)}}
+.pcard:hover{{
+  border-color:rgba(75,142,240,0.35);
+  transform:translateY(-3px);
+  box-shadow:0 8px 32px rgba(75,142,240,0.08),0 2px 8px rgba(0,0,0,0.4);
+}}
+.pcard::before{{
+  content:'';position:absolute;top:0;left:0;bottom:0;width:3px;
+  background:var(--pcard-color,var(--accent));
+  border-radius:3px 0 0 3px;
+}}
 .pcard::after{{
   content:'';position:absolute;top:0;left:0;right:0;height:1px;
-  background:linear-gradient(90deg,var(--accent),rgba(75,142,240,0));
+  background:linear-gradient(90deg,var(--pcard-color,var(--accent)),transparent 60%);
+  opacity:0.5;
+}}
+.pcard-icon{{
+  font-size:22px;margin-bottom:10px;display:block;
+  filter:drop-shadow(0 0 8px rgba(75,142,240,0.3));
 }}
 .pcard-num{{
-  font-size:10px;font-weight:800;color:var(--accent);
-  text-transform:uppercase;letter-spacing:1.5px;margin-bottom:10px;
+  font-size:9.5px;font-weight:800;color:var(--text3);
+  text-transform:uppercase;letter-spacing:2px;margin-bottom:8px;
   font-family:var(--mono);
 }}
 .pcard-title{{
-  font-size:15px;font-weight:750;color:var(--text);
-  margin-bottom:10px;line-height:1.35;
+  font-size:14.5px;font-weight:750;color:var(--text);
+  margin-bottom:10px;line-height:1.38;
 }}
-.pcard-body{{font-size:12.5px;color:var(--text2);line-height:1.65}}
-.pcard-body strong{{color:var(--text)}}
-.pcard-accent{{color:var(--accent);font-weight:600}}
+.pcard-body{{font-size:12.5px;color:var(--text2);line-height:1.68}}
+.pcard-body strong{{color:var(--text);font-weight:650}}
+.pcard-accent{{color:var(--accent);font-weight:650}}
 
 /* ════════════════════════════════════════════════════
    STAT STRIP
@@ -383,41 +448,63 @@ nav{{
   gap:12px;margin-bottom:48px;
 }}
 .scard{{
-  background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r);padding:18px 16px 14px;
-  transition:border-color .2s;
+  background:linear-gradient(145deg,var(--surface) 0%,var(--surface2) 100%);
+  border:1px solid var(--border);
+  border-radius:var(--r);padding:20px 18px 16px;
+  position:relative;overflow:hidden;
+  transition:border-color .22s,transform .22s,box-shadow .22s;
 }}
-.scard:hover{{border-color:var(--border2)}}
+.scard::before{{
+  content:'';position:absolute;top:0;left:0;right:0;height:1px;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,0.06),transparent);
+}}
+.scard:hover{{
+  border-color:var(--border2);
+  transform:translateY(-2px);
+  box-shadow:0 6px 24px rgba(0,0,0,0.3);
+}}
 .scard-val{{
-  font-size:32px;font-weight:900;letter-spacing:-1px;line-height:1;
-  margin-bottom:6px;
+  font-size:34px;font-weight:900;letter-spacing:-1.2px;line-height:1;
+  margin-bottom:7px;font-variant-numeric:tabular-nums;
 }}
-.scard-label{{font-size:11px;color:var(--text2);font-weight:500}}
+.scard-label{{font-size:11px;color:var(--text2);font-weight:600;letter-spacing:0.1px}}
 .scard-sub{{font-size:10.5px;color:var(--text3);margin-top:3px}}
-.c-green .scard-val{{color:var(--green)}}
-.c-yellow .scard-val{{color:var(--yellow)}}
-.c-red .scard-val{{color:var(--red)}}
-.c-blue .scard-val{{color:var(--accent)}}
-.c-purple .scard-val{{color:var(--purple)}}
-.c-teal .scard-val{{color:var(--teal)}}
+.scard-bar{{height:3px;border-radius:2px;margin-top:10px;background:var(--surface3);overflow:hidden}}
+.scard-bar-fill{{height:100%;border-radius:2px;background:currentColor;opacity:0.4;transition:width 1.2s ease}}
+.c-green .scard-val{{color:var(--green)}} .c-green .scard-bar-fill{{background:var(--green)}}
+.c-yellow .scard-val{{color:var(--yellow)}} .c-yellow .scard-bar-fill{{background:var(--yellow)}}
+.c-red .scard-val{{color:var(--red)}} .c-red .scard-bar-fill{{background:var(--red)}}
+.c-blue .scard-val{{color:var(--accent)}} .c-blue .scard-bar-fill{{background:var(--accent)}}
+.c-purple .scard-val{{color:var(--purple)}} .c-purple .scard-bar-fill{{background:var(--purple)}}
+.c-teal .scard-val{{color:var(--teal)}} .c-teal .scard-bar-fill{{background:var(--teal)}}
 
 /* ════════════════════════════════════════════════════
    CHARTS
 ════════════════════════════════════════════════════ */
 .chart-grid{{
-  display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+  display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));
   gap:16px;margin-bottom:32px;
 }}
 .chart-card{{
   background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r);padding:22px;
+  border-radius:var(--r);padding:22px 22px 18px;
+  position:relative;overflow:hidden;
+  transition:border-color .2s;
+}}
+.chart-card:hover{{border-color:var(--border2)}}
+.chart-card::before{{
+  content:'';position:absolute;top:0;left:0;width:3px;bottom:0;
+  background:linear-gradient(180deg,var(--accent) 0%,var(--purple) 100%);
+  border-radius:3px 0 0 3px;opacity:0.5;
 }}
 .chart-card.wide{{grid-column:span 2}}
 @media(max-width:640px){{.chart-card.wide{{grid-column:span 1}}}}
 .chart-title{{
-  font-size:11px;font-weight:700;color:var(--text3);
-  text-transform:uppercase;letter-spacing:0.8px;margin-bottom:16px;
+  font-size:10.5px;font-weight:800;color:var(--text3);
+  text-transform:uppercase;letter-spacing:1px;margin-bottom:18px;
+  display:flex;align-items:center;gap:8px;
 }}
+.chart-title::before{{content:'';width:3px;height:12px;border-radius:2px;background:var(--accent)}}
 .chart-wrap{{position:relative}}
 
 /* ════════════════════════════════════════════════════
@@ -427,18 +514,26 @@ nav{{
   background:var(--surface);border:1px solid var(--border);
   border-radius:var(--r);padding:24px;margin-bottom:0;
 }}
-.blocker-row{{display:flex;align-items:center;gap:12px;margin-bottom:12px}}
+.blocker-row{{
+  display:flex;align-items:center;gap:12px;margin-bottom:11px;
+  padding:8px 10px;border-radius:var(--r-sm);
+  transition:background .15s;
+}}
+.blocker-row:hover{{background:var(--surface2)}}
 .blocker-row:last-child{{margin-bottom:0}}
 .blocker-label{{font-size:12px;color:var(--text2);min-width:0;flex:1;
   overflow:hidden;text-overflow:ellipsis;white-space:nowrap}}
 .blocker-track{{
-  width:120px;flex-shrink:0;height:5px;
+  width:140px;flex-shrink:0;height:6px;
   background:var(--surface3);border-radius:3px;overflow:hidden;
 }}
-.blocker-fill{{height:100%;background:var(--red);border-radius:3px;transition:width .8s ease}}
+.blocker-fill{{
+  height:100%;border-radius:3px;transition:width 1s ease;
+  background:linear-gradient(90deg,var(--red-dim),var(--red));
+}}
 .blocker-count{{
-  font-size:12px;font-weight:700;color:var(--text);
-  min-width:24px;text-align:right;
+  font-size:12px;font-weight:800;color:var(--text);
+  min-width:24px;text-align:right;font-family:var(--mono);
 }}
 
 /* ════════════════════════════════════════════════════
@@ -482,49 +577,76 @@ nav{{
   overflow-x:auto;border-radius:var(--r);
   border:1px solid var(--border);
   background:var(--surface);
+  max-height:680px;overflow-y:auto;
 }}
 table{{width:100%;border-collapse:collapse}}
-thead tr{{background:var(--surface3)}}
+thead tr{{
+  background:var(--surface3);
+  position:sticky;top:0;z-index:10;
+  box-shadow:0 1px 0 var(--border2),0 2px 8px rgba(0,0,0,0.3);
+}}
 th{{
-  padding:10px 13px;text-align:left;
-  font-size:10.5px;font-weight:800;color:var(--text3);
-  text-transform:uppercase;letter-spacing:0.8px;
+  padding:11px 13px;text-align:left;
+  font-size:10px;font-weight:800;color:var(--text3);
+  text-transform:uppercase;letter-spacing:1px;
   white-space:nowrap;border-bottom:1px solid var(--border2);
-  cursor:pointer;user-select:none;
+  cursor:pointer;user-select:none;transition:color .15s;
 }}
 th:hover{{color:var(--text2)}}
 th.th-sorted{{color:var(--accent)}}
-.sort-ic{{opacity:0.35;font-size:9px;margin-left:3px}}
-th.th-sorted .sort-ic{{opacity:1}}
+.sort-ic{{opacity:0.3;font-size:9px;margin-left:3px}}
+th.th-sorted .sort-ic{{opacity:1;color:var(--accent)}}
 td{{
-  padding:11px 13px;font-size:12.5px;color:var(--text2);
+  padding:10px 13px;font-size:12.5px;color:var(--text2);
   border-bottom:1px solid var(--border);vertical-align:middle;
+  transition:background .12s;
+}}
+tbody tr:nth-child(even) td{{background:rgba(255,255,255,0.012)}}
+tbody tr:hover td{{
+  background:rgba(75,142,240,0.05)!important;
+}}
+tbody tr:hover td:first-child{{
+  border-left:2px solid var(--accent);
+  padding-left:11px;
 }}
 tr:last-child td{{border-bottom:none}}
-tr:hover td{{background:var(--surface2)}}
 tr.hide{{display:none}}
 .col-id{{color:var(--text3);font-family:var(--mono);font-size:11px;width:36px}}
-.col-name{{min-width:110px;width:110px}}
+.col-name{{min-width:115px;width:115px}}
 .col-cat{{min-width:140px}}
-.col-desc{{min-width:200px;max-width:260px;color:var(--text)}}
-.col-auth{{min-width:150px}}
+.col-desc{{min-width:200px;max-width:250px;color:var(--text)}}
+.col-auth{{min-width:155px}}
 .col-ss{{min-width:90px;white-space:nowrap}}
-.col-api{{min-width:130px;white-space:nowrap}}
+.col-api{{min-width:135px;white-space:nowrap}}
 .col-mcp{{min-width:54px;text-align:center}}
-.col-build{{min-width:110px}}
+.col-build{{min-width:115px}}
 .col-blocker{{min-width:170px;max-width:220px;font-size:11.5px}}
 .col-conf{{min-width:80px}}
 
 .app-link{{
-  color:var(--text);font-weight:650;font-size:12.5px;
+  color:var(--text);font-weight:700;font-size:12.5px;
   transition:color .15s;
+  display:inline-flex;align-items:center;gap:5px;
 }}
+.app-link::after{{content:'↗';font-size:9px;opacity:0;transition:opacity .15s;color:var(--accent)}}
 .app-link:hover{{color:var(--accent);text-decoration:none}}
+.app-link:hover::after{{opacity:1}}
+
+/* Category pills — unique color per category */
 .cat-pill{{
-  font-size:10px;padding:2px 7px;border-radius:var(--r-xs);
-  background:var(--surface4);color:var(--text3);font-weight:600;
-  white-space:nowrap;
+  font-size:9.5px;padding:2px 7px;border-radius:var(--r-xs);
+  font-weight:700;white-space:nowrap;letter-spacing:0.2px;
 }}
+.cat-crm{{background:rgba(59,130,246,0.12);color:#60a5fa;border:1px solid rgba(59,130,246,0.2)}}
+.cat-support{{background:rgba(34,197,94,0.1);color:#4ade80;border:1px solid rgba(34,197,94,0.2)}}
+.cat-comms{{background:rgba(168,85,247,0.1);color:#c084fc;border:1px solid rgba(168,85,247,0.2)}}
+.cat-marketing{{background:rgba(249,115,22,0.1);color:#fb923c;border:1px solid rgba(249,115,22,0.2)}}
+.cat-ecomm{{background:rgba(236,72,153,0.1);color:#f472b6;border:1px solid rgba(236,72,153,0.2)}}
+.cat-data{{background:rgba(20,184,166,0.1);color:#2dd4bf;border:1px solid rgba(20,184,166,0.2)}}
+.cat-dev{{background:rgba(99,102,241,0.1);color:#818cf8;border:1px solid rgba(99,102,241,0.2)}}
+.cat-prod{{background:rgba(245,158,11,0.1);color:#fbbf24;border:1px solid rgba(245,158,11,0.2)}}
+.cat-finance{{background:rgba(239,68,68,0.1);color:#f87171;border:1px solid rgba(239,68,68,0.2)}}
+.cat-ai{{background:rgba(167,139,250,0.1);color:#a78bfa;border:1px solid rgba(167,139,250,0.2)}}
 
 /* ════════════════════════════════════════════════════
    BADGES
@@ -561,12 +683,14 @@ tr.hide{{display:none}}
   padding:2px 7px;border-radius:var(--r-xs);letter-spacing:0.3px;
 }}
 
-.conf-dot{{
-  display:inline-block;width:6px;height:6px;border-radius:50%;vertical-align:middle;margin-right:4px;
+.conf-pill{{
+  font-size:9.5px;font-weight:800;padding:2px 8px;
+  border-radius:100px;letter-spacing:0.3px;
+  text-transform:uppercase;
 }}
-.conf-high{{background:var(--green)}}
-.conf-med{{background:var(--yellow)}}
-.conf-low{{background:var(--red)}}
+.conf-high{{background:rgba(34,197,94,0.12);color:#4ade80;border:1px solid rgba(34,197,94,0.2)}}
+.conf-med{{background:rgba(245,158,11,0.12);color:#fbbf24;border:1px solid rgba(245,158,11,0.2)}}
+.conf-low{{background:rgba(239,68,68,0.12);color:#f87171;border:1px solid rgba(239,68,68,0.2)}}
 
 /* ════════════════════════════════════════════════════
    AGENT SECTION
@@ -619,34 +743,46 @@ code{{
 
 .code-block{{
   font-family:var(--mono);font-size:11.5px;
-  background:var(--bg);border:1px solid var(--border2);
-  border-radius:var(--r-sm);padding:16px;
-  color:#c9d1e3;line-height:1.6;overflow-x:auto;
-  margin-top:16px;
+  background:#05070d;border:1px solid var(--border2);
+  border-radius:var(--r-sm);padding:20px 16px 16px;
+  color:#c9d1e3;line-height:1.65;overflow-x:auto;
+  margin-top:16px;position:relative;
+  box-shadow:inset 0 1px 4px rgba(0,0,0,0.5);
 }}
-.code-comment{{color:#4a5568}}
-.code-kw{{color:#f472b6}}
+.code-block::before{{
+  content:'';position:absolute;top:9px;left:14px;
+  width:8px;height:8px;border-radius:50%;
+  background:#ff5f56;box-shadow:14px 0 0 #ffbd2e, 28px 0 0 #27c93f;
+}}
+.code-comment{{color:#4b5563;font-style:italic}}
+.code-kw{{color:#f472b6;font-weight:600}}
 .code-fn{{color:#60a5fa}}
 .code-str{{color:#34d399}}
 
 /* ════════════════════════════════════════════════════
    VERIFICATION
 ════════════════════════════════════════════════════ */
-.acc-bars{{max-width:600px;margin:24px 0 32px}}
-.acc-row{{margin-bottom:16px}}
+.acc-bars{{max-width:640px;margin:24px 0 36px}}
+.acc-row{{margin-bottom:18px}}
 .acc-meta{{
   display:flex;justify-content:space-between;
-  font-size:12px;color:var(--text2);margin-bottom:6px;
+  font-size:12.5px;color:var(--text2);margin-bottom:8px;font-weight:500;
 }}
 .acc-track{{
-  height:8px;border-radius:4px;
+  height:10px;border-radius:5px;
   background:var(--surface3);overflow:hidden;
+  box-shadow:inset 0 1px 3px rgba(0,0,0,0.3);
 }}
 .acc-fill{{
-  height:100%;border-radius:4px;transition:width 1s ease;
+  height:100%;border-radius:5px;transition:width 1.2s cubic-bezier(.16,1,.3,1);
+  position:relative;
 }}
-.acc-fill.pre{{background:var(--yellow)}}
-.acc-fill.post{{background:var(--green)}}
+.acc-fill::after{{
+  content:'';position:absolute;top:0;left:0;right:0;height:50%;
+  background:rgba(255,255,255,0.15);border-radius:5px 5px 0 0;
+}}
+.acc-fill.pre{{background:linear-gradient(90deg,#d97706,var(--yellow))}}
+.acc-fill.post{{background:linear-gradient(90deg,#16a34a,var(--green))}}
 
 .verify-grid{{
   display:grid;
@@ -655,36 +791,76 @@ code{{
 }}
 .vcard{{
   background:var(--surface);border:1px solid var(--border);
-  border-radius:var(--r-sm);padding:14px;
+  border-radius:var(--r-sm);padding:16px;
+  transition:border-color .2s,transform .2s,box-shadow .2s;
+}}
+.vcard:hover{{
+  transform:translateY(-2px);
+  box-shadow:0 4px 16px rgba(0,0,0,0.3);
 }}
 .vcard-hit{{border-left:3px solid var(--green)}}
+.vcard-hit:hover{{border-color:rgba(34,197,94,0.3)}}
 .vcard-partial{{border-left:3px solid var(--yellow)}}
+.vcard-partial:hover{{border-color:rgba(245,158,11,0.3)}}
 .vcard-miss{{border-left:3px solid var(--red)}}
-.vcard-header{{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}}
-.vcard-app{{font-size:13px;font-weight:750;color:var(--text)}}
-.vcard-verdict{{font-size:10.5px;font-weight:800;letter-spacing:0.4px}}
-.vcard-hit .vcard-verdict{{color:var(--green)}}
-.vcard-partial .vcard-verdict{{color:var(--yellow)}}
-.vcard-miss .vcard-verdict{{color:var(--red)}}
-.vcard-row{{margin-bottom:6px}}
+.vcard-miss:hover{{border-color:rgba(239,68,68,0.3)}}
+.vcard-header{{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}}
+.vcard-app{{font-size:13.5px;font-weight:750;color:var(--text)}}
+.vcard-verdict{{
+  font-size:10px;font-weight:800;letter-spacing:0.5px;
+  padding:2px 8px;border-radius:100px;
+}}
+.vcard-hit .vcard-verdict{{color:#4ade80;background:rgba(34,197,94,0.12);border:1px solid rgba(34,197,94,0.2)}}
+.vcard-partial .vcard-verdict{{color:#fbbf24;background:rgba(245,158,11,0.12);border:1px solid rgba(245,158,11,0.2)}}
+.vcard-miss .vcard-verdict{{color:#f87171;background:rgba(239,68,68,0.12);border:1px solid rgba(239,68,68,0.2)}}
+.vcard-row{{margin-bottom:7px}}
 .vcard-lbl{{
-  font-size:10px;font-weight:800;color:var(--text3);
-  text-transform:uppercase;letter-spacing:0.5px;margin-right:4px;
+  font-size:9.5px;font-weight:800;color:var(--text3);
+  text-transform:uppercase;letter-spacing:0.7px;margin-right:5px;
 }}
-.vcard-val{{font-size:11.5px;color:var(--text2);line-height:1.4}}
+.vcard-val{{font-size:11.5px;color:var(--text2);line-height:1.45}}
 .vcard-url{{
-  font-size:11px;color:var(--text3);margin-top:8px;
-  font-family:var(--mono);
+  font-size:11px;color:var(--text3);margin-top:10px;
+  font-family:var(--mono);padding-top:8px;border-top:1px solid var(--border);
 }}
-.vcard-url a{{color:var(--text3)}}
-.vcard-url a:hover{{color:var(--accent)}}
+.vcard-url a{{color:var(--accent)}}
+.vcard-url a:hover{{text-decoration:underline}}
+
+/* ════════════════════════════════════════════════════
+   BACK TO TOP
+════════════════════════════════════════════════════ */
+#btt{{
+  position:fixed;bottom:28px;right:28px;z-index:300;
+  width:40px;height:40px;border-radius:50%;
+  background:var(--surface3);border:1px solid var(--border2);
+  color:var(--text2);font-size:16px;
+  display:flex;align-items:center;justify-content:center;
+  cursor:pointer;opacity:0;pointer-events:none;
+  transition:opacity .3s,transform .3s,background .2s;
+  box-shadow:0 4px 16px rgba(0,0,0,0.4);
+}}
+#btt.show{{opacity:1;pointer-events:auto}}
+#btt:hover{{background:var(--accent);color:#fff;transform:translateY(-3px)}}
+
+/* ════════════════════════════════════════════════════
+   SCROLL REVEAL
+════════════════════════════════════════════════════ */
+.reveal{{
+  opacity:0;transform:translateY(24px);
+  transition:opacity .6s ease,transform .6s ease;
+}}
+.reveal.in{{opacity:1;transform:translateY(0)}}
+.reveal-delay-1{{transition-delay:.1s}}
+.reveal-delay-2{{transition-delay:.2s}}
+.reveal-delay-3{{transition-delay:.3s}}
 
 /* ════════════════════════════════════════════════════
    FOOTER
 ════════════════════════════════════════════════════ */
 footer{{
-  padding:28px;border-top:1px solid var(--border);
-  text-align:center;color:var(--text3);font-size:11.5px;line-height:1.8;
+  padding:32px 28px;border-top:1px solid var(--border);
+  text-align:center;color:var(--text3);font-size:11.5px;line-height:1.9;
+  background:linear-gradient(0deg,rgba(75,142,240,0.02),transparent);
 }}
 footer a{{color:var(--text3)}}
 footer a:hover{{color:var(--accent)}}
@@ -701,7 +877,7 @@ footer a:hover{{color:var(--accent)}}
    ANIMATIONS
 ════════════════════════════════════════════════════ */
 @keyframes fadeUp{{from{{opacity:0;transform:translateY(16px)}}to{{opacity:1;transform:translateY(0)}}}}
-.fade-up{{animation:fadeUp .5s ease both}}
+.fade-up{{animation:fadeUp .55s ease both}}
 .delay-1{{animation-delay:.08s}}
 .delay-2{{animation-delay:.16s}}
 .delay-3{{animation-delay:.24s}}
@@ -709,6 +885,8 @@ footer a:hover{{color:var(--accent)}}
 </style>
 </head>
 <body>
+<div id="scroll-prog"></div>
+<button id="btt" onclick="scrollTo(0,0)" title="Back to top">↑</button>
 
 <!-- ══ NAV ══════════════════════════════════════════════════ -->
 <nav>
@@ -775,18 +953,20 @@ footer a:hover{{color:var(--accent)}}
     <p class="sec-sub">Six headline insights from the data — what a reviewer should know in 90 seconds.</p>
 
     <div class="pattern-grid">
-      <div class="pcard">
+      <div class="pcard reveal" style="--pcard-color:#4b8ef0">
+        <span class="pcard-icon">🔑</span>
         <div class="pcard-num">01 / AUTH</div>
-        <div class="pcard-title">API Key + OAuth2 dominate — but the split is category-dependent</div>
+        <div class="pcard-title">API Key + OAuth2 dominate &mdash; but the split is category-dependent</div>
         <div class="pcard-body">
-          <strong>API Key</strong> appears in <span class="pcard-accent">{auth_dist.get('API Key',0)} apps</span> — 
-          dominant in Developer Infra, Data/SEO, and Finance. 
-          <strong>OAuth2</strong> appears in <span class="pcard-accent">{auth_dist.get('OAuth2',0)} apps</span> — 
+          <strong>API Key</strong> appears in <span class="pcard-accent">{auth_dist.get('API Key',0)} apps</span> &mdash;
+          dominant in Developer Infra, Data/SEO, and Finance.
+          <strong>OAuth2</strong> appears in <span class="pcard-accent">{auth_dist.get('OAuth2',0)} apps</span> &mdash;
           standard for CRM, Marketing, and Productivity where user-scoped access matters.
           Many apps support <em>both</em>. Any Composio connector must handle dual-auth flows gracefully.
         </div>
       </div>
-      <div class="pcard">
+      <div class="pcard reveal reveal-delay-1" style="--pcard-color:#22c55e">
+        <span class="pcard-icon">⚡</span>
         <div class="pcard-num">02 / EASY WINS</div>
         <div class="pcard-title">Developer Infra & Productivity are 100% buildable — go here first</div>
         <div class="pcard-body">
@@ -796,42 +976,46 @@ footer a:hover{{color:var(--accent)}}
           <span class="pcard-accent">Zero blockers.</span> These are the highest-ROI, lowest-friction toolkits.
         </div>
       </div>
-      <div class="pcard">
+      <div class="pcard reveal reveal-delay-2" style="--pcard-color:#ef4444">
+        <span class="pcard-icon">🚫</span>
         <div class="pcard-num">03 / GATING</div>
-        <div class="pcard-title">Enterprise CRM & Finance are the hardest — partner gates, not technical limits</div>
+        <div class="pcard-title">Enterprise CRM &amp; Finance are the hardest &mdash; partner gates, not technical limits</div>
         <div class="pcard-body">
-          Apps like <strong>DealCloud, PitchBook, Gladly, Paygent, iPayX</strong> have no public dev portal. 
-          The blocker is business, not technical: you can't get credentials without a sales conversation or partnership. 
-          For these, the correct finding is <em>"blocked — document it and move on."</em>
+          Apps like <strong>DealCloud, PitchBook, Gladly, Paygent, iPayX</strong> have no public dev portal.
+          The blocker is business, not technical: you can't get credentials without a sales conversation or partnership.
+          For these, the correct finding is <em>&ldquo;blocked &mdash; document it and move on.&rdquo;</em>
         </div>
       </div>
-      <div class="pcard">
+      <div class="pcard reveal reveal-delay-3" style="--pcard-color:#a78bfa">
+        <span class="pcard-icon">🧑&zwj;💻</span>
         <div class="pcard-num">04 / MCP</div>
-        <div class="pcard-title">Only 17% have official MCP servers — massive greenfield for Composio</div>
+        <div class="pcard-title">Only 17% have official MCP servers &mdash; massive greenfield for Composio</div>
         <div class="pcard-body">
-          Just <strong>{mcp_count}/100</strong> apps have confirmed official MCP servers (GitHub, Stripe, Slack, 
-          Notion, Sentry, Jira, Cloudflare, Devin, Otter AI, Supabase, Firecrawl, Apify, others). 
-          The other 83 — all with working REST APIs — represent a direct opportunity for Composio 
+          Just <strong>{mcp_count}/100</strong> apps have confirmed official MCP servers (GitHub, Stripe, Slack,
+          Notion, Sentry, Jira, Cloudflare, Devin, Otter AI, Supabase, Firecrawl, Apify, others).
+          The other 83 &mdash; all with working REST APIs &mdash; represent a direct opportunity for Composio
           to add MCP wrappers as a competitive moat.
         </div>
       </div>
-      <div class="pcard">
+      <div class="pcard reveal" style="--pcard-color:#f59e0b">
+        <span class="pcard-icon">🔓</span>
         <div class="pcard-num">05 / SELF-SERVE</div>
-        <div class="pcard-title">76% fully self-serve — gating concentrates in enterprise and regulated sectors</div>
+        <div class="pcard-title">76% fully self-serve &mdash; gating concentrates in enterprise and regulated sectors</div>
         <div class="pcard-body">
-          <strong>{ss_yes} apps</strong> offer immediate dev credentials with no sales contact. 
-          Only <strong>{ss_no} apps</strong> are fully gated. Gating concentrates in: 
-          enterprise CRM (DealCloud), research APIs (PitchBook), AI tools requiring manual approval (Consensus, Fathom), 
-          and regulated finance (Plaid, Ramp). Self-serve is the <em>norm</em> — gating is the outlier.
+          <strong>{ss_yes} apps</strong> offer immediate dev credentials with no sales contact.
+          Only <strong>{ss_no} apps</strong> are fully gated. Gating concentrates in:
+          enterprise CRM (DealCloud), research APIs (PitchBook), AI tools requiring manual approval (Consensus, Fathom),
+          and regulated finance (Plaid, Ramp). Self-serve is the <em>norm</em> &mdash; gating is the outlier.
         </div>
       </div>
-      <div class="pcard">
+      <div class="pcard reveal reveal-delay-1" style="--pcard-color:#2dd4bf">
+        <span class="pcard-icon">🤖</span>
         <div class="pcard-num">06 / AI TOOLS</div>
-        <div class="pcard-title">AI/Media native apps are the frontier — high receptiveness, fast-moving APIs</div>
+        <div class="pcard-title">AI/Media native apps are the frontier &mdash; high receptiveness, fast-moving APIs</div>
         <div class="pcard-body">
-          Reducto, Devin, Firecrawl, Grain, and Higgsfield have fresh APIs, aggressive developer programs, 
-          and are <span class="pcard-accent">actively adding MCP</span>. 
-          They want integrations and are easy to reach. 
+          Reducto, Devin, Firecrawl, Grain, and Higgsfield have fresh APIs, aggressive developer programs,
+          and are <span class="pcard-accent">actively adding MCP</span>.
+          They want integrations and are easy to reach.
           The data signals: AI-native tools have the highest partnership receptiveness of any category right now.
         </div>
       </div>
@@ -839,39 +1023,45 @@ footer a:hover{{color:var(--accent)}}
 
     <!-- Stat Strip -->
     <div class="stat-strip">
-      <div class="scard c-green">
+      <div class="scard c-green reveal">
         <div class="scard-val">{ready}</div>
         <div class="scard-label">Ready to Build</div>
         <div class="scard-sub">{round(ready/total*100)}% of all apps</div>
+        <div class="scard-bar"><div class="scard-bar-fill" style="width:{round(ready/total*100)}%"></div></div>
       </div>
-      <div class="scard c-yellow">
+      <div class="scard c-yellow reveal reveal-delay-1">
         <div class="scard-val">{needs}</div>
         <div class="scard-label">Needs Work</div>
-        <div class="scard-sub">Auth complexity or partial docs</div>
+        <div class="scard-sub">Fixable with effort</div>
+        <div class="scard-bar"><div class="scard-bar-fill" style="width:{round(needs/total*100)}%"></div></div>
       </div>
-      <div class="scard c-red">
+      <div class="scard c-red reveal reveal-delay-2">
         <div class="scard-val">{blocked}</div>
         <div class="scard-label">Blocked</div>
-        <div class="scard-sub">Partner/sales gate or no API</div>
+        <div class="scard-sub">Partner / sales gate</div>
+        <div class="scard-bar"><div class="scard-bar-fill" style="width:{round(blocked/total*100)}%"></div></div>
       </div>
-      <div class="scard c-blue">
+      <div class="scard c-blue reveal reveal-delay-3">
         <div class="scard-val">{ss_yes}</div>
         <div class="scard-label">Fully Self-Serve</div>
         <div class="scard-sub">Instant dev credentials</div>
+        <div class="scard-bar"><div class="scard-bar-fill" style="width:{round(ss_yes/total*100)}%"></div></div>
       </div>
-      <div class="scard c-purple">
+      <div class="scard c-teal reveal">
+        <div class="scard-val">{ss_partial}</div>
+        <div class="scard-label">Partial Self-Serve</div>
+        <div class="scard-sub">Some friction</div>
+        <div class="scard-bar"><div class="scard-bar-fill" style="width:{round(ss_partial/total*100)}%"></div></div>
+      </div>
+      <div class="scard c-purple reveal reveal-delay-1">
         <div class="scard-val">{mcp_count}</div>
-        <div class="scard-label">Official MCP</div>
-        <div class="scard-sub">Confirmed server exists</div>
+        <div class="scard-label">Have MCP Server</div>
+        <div class="scard-sub">Official + verified</div>
+        <div class="scard-bar"><div class="scard-bar-fill" style="width:{round(mcp_count/total*100)}%"></div></div>
       </div>
-      <div class="scard c-teal">
-        <div class="scard-val">{auth_dist.get('API Key',0)}</div>
-        <div class="scard-label">API Key Auth</div>
-        <div class="scard-sub">Most common auth type</div>
-      </div>
-    </div>
 
     <!-- Charts -->
+
     <div class="chart-grid">
       <div class="chart-card">
         <div class="chart-title">Auth Method Distribution</div>
@@ -1104,7 +1294,7 @@ tools = toolset.<span class="code-fn">get_tools</span>(actions=[
 <footer>
   <div>Composio App Research — 100 Apps · 10 Categories · {now}</div>
   <div>Built with OpenRouter (Gemini 2.5 Flash) · Pattern analysis by Python · Agent-first, human-verified</div>
-  <div><a href="https://github.com">View Source →</a> · Research data: <code>research_results.json</code> · <a href="#patterns">Back to top ↑</a></div>
+  <div><a href="https://github.com/17AnuragMishra/composio-assignment" target="_blank" rel="noopener">View Source on GitHub →</a> · Research data: <code>research_results.json</code> · <a href="#patterns">Back to top ↑</a></div>
 </footer>
 
 <!-- ══ SCRIPTS ════════════════════════════════════════════════ -->
@@ -1127,12 +1317,12 @@ new Chart('authChart',{{
     datasets:[{{
       data:{auth_vals},
       backgroundColor:[C.blue,C.green,C.yellow,C.purple,C.teal,C.orange,C.pink],
-      borderRadius:4,borderSkipped:false,
+      borderRadius:5,borderSkipped:false,
     }}]
   }},
   options:{{
     responsive:true,maintainAspectRatio:false,
-    plugins:{{legend:{{display:false}}}},
+    plugins:{{legend:{{display:false}},tooltip:{{callbacks:{{label:ctx=>` ${{ctx.raw}} apps`}}}}}},
     scales:{{
       x:{{grid:{{color:gridColor}},ticks:{{maxRotation:25}}}},
       y:{{grid:{{color:gridColor}},beginAtZero:true}}
@@ -1148,12 +1338,13 @@ new Chart('buildChart',{{
     datasets:[{{
       data:[{ready},{needs},{blocked}],
       backgroundColor:[C.green,C.yellow,C.red],
-      borderWidth:0,hoverOffset:6,
+      borderWidth:0,hoverOffset:8,
     }}]
   }},
   options:{{
     responsive:true,maintainAspectRatio:false,
-    plugins:{{legend:{{position:'bottom',labels:{{boxWidth:10,padding:12}}}}}}
+    cutout:'70%',
+    plugins:{{legend:{{position:'bottom',labels:{{boxWidth:10,padding:14}}}}}}
   }}
 }});
 
@@ -1165,12 +1356,13 @@ new Chart('ssChart',{{
     datasets:[{{
       data:[{ss_yes},{ss_partial},{ss_no}],
       backgroundColor:[C.green,C.yellow,C.red],
-      borderWidth:0,hoverOffset:6,
+      borderWidth:0,hoverOffset:8,
     }}]
   }},
   options:{{
     responsive:true,maintainAspectRatio:false,
-    plugins:{{legend:{{position:'bottom',labels:{{boxWidth:10,padding:12}}}}}}
+    cutout:'70%',
+    plugins:{{legend:{{position:'bottom',labels:{{boxWidth:10,padding:14}}}}}}
   }}
 }});
 
@@ -1197,9 +1389,64 @@ new Chart('catChart',{{
 
 // ── Accuracy bars animation ───────────────────────────────────
 setTimeout(()=>{{
-  document.getElementById('fpBar').style.width='{first_pass_acc}%';
-  document.getElementById('pvBar').style.width='{weighted_acc}%';
-}},400);
+  const fp = document.getElementById('fpBar');
+  const pv = document.getElementById('pvBar');
+  if (fp) fp.style.width='{first_pass_acc}%';
+  if (pv) pv.style.width='{weighted_acc}%';
+}},600);
+
+// ── Count-up animation for KPI numbers ───────────────────────
+function countUp(el) {{
+  const target = parseInt(el.dataset.count, 10);
+  if (isNaN(target)) return;
+  const dur = 1000, steps = 30, inc = target / steps;
+  let cur = 0, step = 0;
+  const t = setInterval(() => {{
+    step++;
+    cur = Math.min(Math.round(inc * step), target);
+    el.textContent = cur;
+    if (cur >= target) clearInterval(t);
+  }}, dur / steps);
+}}
+document.querySelectorAll('[data-count]').forEach(el => countUp(el));
+
+// ── Scroll progress bar ───────────────────────────────────────
+const prog = document.getElementById('scroll-prog');
+const btt = document.getElementById('btt');
+window.addEventListener('scroll', () => {{
+  if (prog) {{
+    const scrolled = (scrollY / (document.body.scrollHeight - innerHeight)) * 100;
+    prog.style.width = scrolled + '%';
+  }}
+  if (btt) {{
+    btt.classList.toggle('show', scrollY > 400);
+  }}
+}}, {{passive: true}});
+
+// ── Scroll-reveal via IntersectionObserver ────────────────────
+const revealObs = new IntersectionObserver((entries) => {{
+  entries.forEach(e => {{
+    if (e.isIntersecting) {{
+      e.target.classList.add('in');
+      revealObs.unobserve(e.target);
+    }}
+  }});
+}}, {{threshold: 0.08}});
+document.querySelectorAll('.reveal').forEach(el => revealObs.observe(el));
+
+// ── Active nav highlighting ───────────────────────────────────
+const sections = document.querySelectorAll('section[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const navObs = new IntersectionObserver((entries) => {{
+  entries.forEach(e => {{
+    if (e.isIntersecting) {{
+      navLinks.forEach(a => {{
+        a.classList.toggle('nav-active', a.getAttribute('href') === '#' + e.target.id);
+      }});
+    }}
+  }});
+}}, {{rootMargin:'-40% 0px -55% 0px'}});
+sections.forEach(s => navObs.observe(s));
 
 // ── Table filter state ────────────────────────────────────────
 let sCat='all', sBuild='all', sAuth='all', sQuery='';
@@ -1242,7 +1489,8 @@ function render(){{
     r.classList.toggle('hide',!ok);
     if(ok)vis++;
   }});
-  document.getElementById('rowCount').textContent=vis+' apps';
+  const rc = document.getElementById('rowCount');
+  if (rc) rc.textContent=vis+' apps';
 }}
 
 // ── Table sort ────────────────────────────────────────────────
