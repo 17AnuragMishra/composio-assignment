@@ -1,0 +1,1858 @@
+[
+  {
+    "description": "Salesforce is a cloud-based software company that provides customer relationship management (CRM) service and a complementary suite of enterprise applications focused on customer service, marketing automation, analytics, and application development.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Developer accounts are free, but full API access for production orgs requires a paid plan.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.salesforce.com/docs",
+    "confidence": "High",
+    "id": 1,
+    "name": "Salesforce",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "HubSpot is a developer of software products for inbound marketing, sales, and customer service.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Developer accounts are free and provide API access.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.hubspot.com/",
+    "confidence": "High",
+    "id": 2,
+    "name": "HubSpot",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "Pipedrive is a sales CRM and pipeline management software for small and medium-sized businesses.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "14-day free trial available, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.pipedrive.com/",
+    "confidence": "High",
+    "id": 3,
+    "name": "Pipedrive",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "Attio is a CRM platform that automatically organizes customer data and helps teams build relationships.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free trial available, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.attio.com/",
+    "confidence": "High",
+    "id": 4,
+    "name": "Attio",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "Twenty is an open-source CRM designed for modern businesses, offering a flexible and customizable platform.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Open-source, can be self-hosted. Cloud version offers free tier.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://twenty.com/developers",
+    "confidence": "High",
+    "id": 5,
+    "name": "Twenty",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "Podio is a work management and collaboration platform that allows users to create custom apps and workflows.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available with API access.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.podio.com/",
+    "confidence": "High",
+    "id": 6,
+    "name": "Podio",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "Zoho CRM is a cloud-based customer relationship management software that helps businesses manage sales, marketing, and customer support.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free edition available, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://www.zoho.com/crm/developer/",
+    "confidence": "High",
+    "id": 7,
+    "name": "Zoho CRM",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "Close is a sales CRM for startups and SMBs, offering built-in calling, SMS, and email.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "14-day free trial available, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.close.com/",
+    "confidence": "High",
+    "id": 8,
+    "name": "Close",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "Copper is a CRM for Google Workspace users, designed to help build stronger customer relationships.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "14-day free trial available, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.copper.com/",
+    "confidence": "High",
+    "id": 9,
+    "name": "Copper",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "DealCloud is a CRM and deal management platform for the capital markets industry.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "Requires a paid subscription and contact with sales.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "Requires paid plan and contact with sales for API access.",
+    "docs_url": "https://api.docs.dealcloud.com/",
+    "confidence": "High",
+    "id": 10,
+    "name": "DealCloud",
+    "category": "CRM and Sales"
+  },
+  {
+    "description": "Zendesk is a customer service software and support ticketing system.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Free trial available, but API access might have limitations or require a paid plan for full functionality.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.zendesk.com/",
+    "confidence": "High",
+    "id": 11,
+    "name": "Zendesk",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "Intercom is a customer messaging platform that helps businesses communicate with customers through chat, email, and in-app messages.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Free trial available, but full API access may require a paid plan.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.intercom.com/",
+    "confidence": "High",
+    "id": 12,
+    "name": "Intercom",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "Freshdesk is a cloud-based customer support software that provides helpdesk support with all smart automations to get things done faster.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Free trial available, but API access might have limitations or require a paid plan for full functionality.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.freshdesk.com/",
+    "confidence": "High",
+    "id": 13,
+    "name": "Freshdesk",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "Front is a customer communication platform that unifies email, chat, and social media into a single inbox.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Free trial available, but API access might be limited or require a paid plan.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://dev.frontapp.com/",
+    "confidence": "High",
+    "id": 14,
+    "name": "Front",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "Pylon is a customer support platform designed for modern teams.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.usepylon.com/",
+    "confidence": "High",
+    "id": 15,
+    "name": "Pylon",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "LiveAgent is a multi-channel customer support solution that combines live chat, ticketing, and call center software.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Free trial available, but API access might be limited or require a paid plan.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://api-docs.liveagent.com/",
+    "confidence": "High",
+    "id": 16,
+    "name": "LiveAgent",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "Plain is a customer service platform that helps businesses manage customer interactions.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Free trial available, but API access might be limited or require a paid plan.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.plain.com/",
+    "confidence": "High",
+    "id": 17,
+    "name": "Plain",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "Help Scout is a help desk software that provides email, live chat, and knowledge base tools for customer support.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Free trial available, but API access might be limited or require a paid plan.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.helpscout.com/",
+    "confidence": "High",
+    "id": 18,
+    "name": "Help Scout",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "Gorgias is a helpdesk for e-commerce businesses, integrating with platforms like Shopify, Magento, and BigCommerce.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Free trial available, but API access might be limited or require a paid plan.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.gorgias.com/",
+    "confidence": "High",
+    "id": 19,
+    "name": "Gorgias",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "Gladly is a customer service platform that focuses on a customer-centric approach, allowing agents to see full customer history.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "Requires contacting sales for a demo and pricing.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "Requires contacting sales for API access and credentials.",
+    "docs_url": "https://developer.gladly.com/",
+    "confidence": "High",
+    "id": 20,
+    "name": "Gladly",
+    "category": "Support and Helpdesk"
+  },
+  {
+    "description": "A channel-based messaging platform that brings people, information, and apps together to get work done.",
+    "auth_methods": [
+      "OAuth2",
+      "Bot Token"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free workspace available for development and testing.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://api.slack.com/",
+    "confidence": "High",
+    "id": 21,
+    "name": "Slack",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "A cloud communications platform that allows developers to programmatically make and receive phone calls, send and receive text messages, and perform other communication functions.",
+    "auth_methods": [
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free trial with limited functionality and credit.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://www.twilio.com/docs/api",
+    "confidence": "High",
+    "id": 22,
+    "name": "Twilio",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "A team communication and collaboration software with messaging, audio/video calls, and integrations.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available for up to 10 users.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://www.zoho.com/cliq/help/api/",
+    "confidence": "High",
+    "id": 23,
+    "name": "Zoho Cliq",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "A collaboration suite that integrates messaging, calendar, video conferencing, and document management.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available for up to 50 users.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://open.larksuite.com/document",
+    "confidence": "High",
+    "id": 24,
+    "name": "Lark (Larksuite)",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "A free team communication app for instant messaging, file sharing, and video conferencing.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available.",
+    "api_type": "REST",
+    "api_breadth": "Narrow",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://pumble.com/api/",
+    "confidence": "High",
+    "id": 25,
+    "name": "Pumble",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "A VoIP, instant messaging and digital distribution platform designed for creating communities.",
+    "auth_methods": [
+      "Bot Token",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free to create applications and bots.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://discord.com/developers/docs",
+    "confidence": "High",
+    "id": 26,
+    "name": "Discord",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "A cloud-based mobile and desktop messaging app with a focus on security and speed.",
+    "auth_methods": [
+      "Bot Token"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free to create bots.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://core.telegram.org/bots/api",
+    "confidence": "High",
+    "id": 27,
+    "name": "Telegram",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "A business solution for connecting with customers on WhatsApp, offering messaging, notifications, and customer support.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier for testing, charges apply for production usage.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.facebook.com/docs/whatsapp",
+    "confidence": "High",
+    "id": 28,
+    "name": "WhatsApp Business",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "A cloud-based phone system for businesses, offering call management, analytics, and integrations.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Requires an Aircall account, which typically involves a paid plan or trial.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Needs Work",
+    "main_blocker": "Requires Aircall account (paid plan or trial) to access API.",
+    "docs_url": "https://developer.aircall.io/",
+    "confidence": "High",
+    "id": 29,
+    "name": "Aircall",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "A global cloud communications platform that provides APIs for voice, video, messaging, and verification.",
+    "auth_methods": [
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free trial with credit available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.vonage.com/",
+    "confidence": "High",
+    "id": 30,
+    "name": "Vonage",
+    "category": "Communications and Messaging"
+  },
+  {
+    "description": "Google Ads is an online advertising platform developed by Google, where advertisers bid to display brief advertisements, service offerings, product listings, or videos to web users.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free to sign up, pay-per-click model for ads.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.google.com/google-ads",
+    "confidence": "High",
+    "id": 31,
+    "name": "Google Ads",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "Meta Ads (formerly Facebook Ads) is an advertising platform that allows businesses to run campaigns across Facebook, Instagram, Messenger, and Audience Network.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free to sign up, pay-per-impression/click model for ads.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.facebook.com/docs/marketing-apis",
+    "confidence": "High",
+    "id": 32,
+    "name": "Meta Ads",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "LinkedIn Ads is an advertising platform that enables businesses to reach professionals on the LinkedIn network.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free to sign up, pay-per-impression/click model for ads.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://learn.microsoft.com/en-us/linkedin/marketing",
+    "confidence": "High",
+    "id": 33,
+    "name": "LinkedIn Ads",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "GoHighLevel is an all-in-one sales and marketing platform for agencies and small businesses.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "14-day free trial available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://highlevel.stoplight.io/",
+    "confidence": "High",
+    "id": 34,
+    "name": "GoHighLevel",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "Mailchimp is an email marketing and marketing automation platform.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available for up to 500 contacts.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://mailchimp.com/developer/",
+    "confidence": "High",
+    "id": 35,
+    "name": "Mailchimp",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "Klaviyo is a marketing automation and email platform primarily for e-commerce businesses.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available for up to 250 contacts and 500 emails.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.klaviyo.com/",
+    "confidence": "High",
+    "id": 36,
+    "name": "Klaviyo",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "Systeme.io is an all-in-one marketing platform for building sales funnels, email marketing, websites, and online courses.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available with limited features.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://systeme.io/blog/api",
+    "confidence": "High",
+    "id": 37,
+    "name": "Systeme.io",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "Pinterest is a visual discovery engine for finding ideas like recipes, home and style inspiration, and more.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free to create an account; developer access requires app creation.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.pinterest.com/",
+    "confidence": "High",
+    "id": 38,
+    "name": "Pinterest",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "Threads is a text-based conversation app from Meta, linked to Instagram.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Requires a Meta Developer account and app creation.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.facebook.com/docs/threads",
+    "confidence": "High",
+    "id": 39,
+    "name": "Threads (Meta)",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "SendGrid is a cloud-based email platform that allows businesses to send transactional and marketing emails.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available for up to 100 emails/day.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.sendgrid.com/",
+    "confidence": "High",
+    "id": 40,
+    "name": "SendGrid",
+    "category": "Marketing, Ads, Email and Social"
+  },
+  {
+    "description": "Shopify is a complete commerce platform that lets you start, grow, manage, and scale your business.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free trial available for store creation; API access is standard.",
+    "api_type": "REST+GraphQL",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://shopify.dev/docs/api",
+    "confidence": "High",
+    "id": 41,
+    "name": "Shopify",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "WooCommerce is a flexible, open-source commerce solution built on WordPress.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free to use, requires a WordPress installation.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://woocommerce.github.io/woocommerce-rest-api-docs/",
+    "confidence": "High",
+    "id": 42,
+    "name": "WooCommerce",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "BigCommerce is an open SaaS solution that provides a comprehensive set of commerce tools.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "15-day free trial available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.bigcommerce.com/",
+    "confidence": "High",
+    "id": 43,
+    "name": "BigCommerce",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "Salesforce Commerce Cloud is a cloud-based e-commerce platform for B2C and B2B businesses.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "Requires contacting sales for access and pricing.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "Requires contacting sales for access and pricing",
+    "docs_url": "https://developer.salesforce.com/docs/commerce",
+    "confidence": "High",
+    "id": 44,
+    "name": "Salesforce Commerce Cloud",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "Magento (Adobe Commerce) is an e-commerce platform offering flexible shopping cart systems.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "Requires paid Adobe Commerce license; open-source Magento Open Source is free but requires self-hosting.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Needs Work",
+    "main_blocker": "Requires paid Adobe Commerce license for full features, open-source version requires self-hosting and setup.",
+    "docs_url": "https://developer.adobe.com/commerce/webapi",
+    "confidence": "High",
+    "id": 45,
+    "name": "Magento (Adobe Commerce)",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "Squarespace is a website builder with integrated e-commerce capabilities.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free trial available for website, API access is standard.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.squarespace.com/commerce-apis",
+    "confidence": "High",
+    "id": 46,
+    "name": "Squarespace",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "Ecwid is an e-commerce platform that allows businesses to add a shopping cart to any website.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available, API access is standard.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://api-docs.ecwid.com/",
+    "confidence": "High",
+    "id": 47,
+    "name": "Ecwid",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "Gumroad is an online platform that enables creators to sell products directly to their audience.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free to create an account and sell, API access is standard.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://gumroad.com/api",
+    "confidence": "High",
+    "id": 48,
+    "name": "Gumroad",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "Amazon Selling Partner API (SP-API) helps Amazon selling partners programmatically access their data.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Requires an Amazon Seller Central account, which has various fee structures.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer-docs.amazon.com/sp-api",
+    "confidence": "High",
+    "id": 49,
+    "name": "Amazon Selling Partner",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "Fanbasis is a platform for creators to connect with their fans and monetize their content.",
+    "auth_methods": [
+      "None Public"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "No public API documentation or developer program found.",
+    "api_type": "None Public",
+    "api_breadth": "None Public",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "No public API documentation or developer program found.",
+    "docs_url": "https://fanbasis.com",
+    "confidence": "Low",
+    "id": 50,
+    "name": "Fanbasis",
+    "category": "Ecommerce"
+  },
+  {
+    "description": "DataForSEO provides a comprehensive suite of SEO data APIs for various marketing and research needs.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free trial available with initial credits.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.dataforseo.com",
+    "confidence": "High",
+    "id": 51,
+    "name": "DataForSEO",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "SE Ranking offers an all-in-one SEO platform with an API for integrating its data and functionalities.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "14-day free trial available, API access requires a paid plan.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Needs Work",
+    "main_blocker": "API access requires a paid plan after trial.",
+    "docs_url": "https://seranking.com/api.html",
+    "confidence": "High",
+    "id": 52,
+    "name": "SE Ranking",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "Ahrefs provides a powerful SEO toolset with an API for accessing its extensive backlink, keyword, and site audit data.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "API access is available only with specific paid plans (Advanced or Enterprise) or by contacting sales.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "Requires paid plan (Advanced or Enterprise) or sales contact for API access.",
+    "docs_url": "https://developers.ahrefs.com",
+    "confidence": "High",
+    "id": 53,
+    "name": "Ahrefs",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "MrScraper is a web scraping API that allows users to extract data from websites.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available with limited requests.",
+    "api_type": "REST",
+    "api_breadth": "Narrow",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.mrscraper.com",
+    "confidence": "High",
+    "id": 54,
+    "name": "MrScraper",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "Apify is a platform for building and running web scrapers and automation, offering an API to interact with its actors and datasets.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available with limited compute units.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.apify.com/api/v2",
+    "confidence": "High",
+    "id": 55,
+    "name": "Apify",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "Firecrawl is an API for converting web pages into structured data or markdown, and for crawling websites.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available with limited requests.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.firecrawl.dev",
+    "confidence": "High",
+    "id": 56,
+    "name": "Firecrawl",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "Bright Data provides a leading web data platform with various proxy networks and web scraping tools, accessible via API.",
+    "auth_methods": [
+      "API Key",
+      "Other"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free trial available for some products, requires credit card for signup.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.brightdata.com",
+    "confidence": "High",
+    "id": 57,
+    "name": "Bright Data",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "Sherlock is a command-line tool to find social media accounts by username across many sites.",
+    "auth_methods": [
+      "SDK Only"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Open-source project, no credentials needed.",
+    "api_type": "SDK Only",
+    "api_breadth": "Narrow",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "No public REST API, primarily a command-line tool/library.",
+    "docs_url": "https://github.com/sherlock-project/sherlock",
+    "confidence": "High",
+    "id": 58,
+    "name": "Sherlock",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "Waterfall.io is a platform for building and managing data pipelines and integrations.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "Requires contacting sales for access and pricing.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "Requires contacting sales for API access.",
+    "docs_url": "https://waterfall.io",
+    "confidence": "Medium",
+    "id": 59,
+    "name": "Waterfall.io",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "Clay is a platform for building automated workflows and enriching data, offering an API for programmatic access.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free trial available, API access requires a paid plan.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Needs Work",
+    "main_blocker": "API access requires a paid plan after trial.",
+    "docs_url": "https://docs.clay.com",
+    "confidence": "High",
+    "id": 60,
+    "name": "Clay",
+    "category": "Data, SEO and Scraping"
+  },
+  {
+    "description": "GitHub is a platform for version control and collaboration, allowing developers to host and review code, manage projects, and build software.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available for personal and open-source projects.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.github.com/en/rest",
+    "confidence": "High",
+    "id": 61,
+    "name": "GitHub",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "Vercel is a platform for frontend developers, providing tools for deploying and hosting web projects with automatic CI/CD.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free hobby plan available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://vercel.com/docs/rest-api",
+    "confidence": "High",
+    "id": 62,
+    "name": "Vercel",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "Netlify is a web developer platform that automates code to create high-performance, easily maintainable sites and web apps.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free starter plan available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.netlify.com/api/get-started",
+    "confidence": "High",
+    "id": 63,
+    "name": "Netlify",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "Cloudflare is a web infrastructure and website security company, providing content delivery network services, DDoS mitigation, and internet security.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free plan available for basic features.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.cloudflare.com/api",
+    "confidence": "High",
+    "id": 64,
+    "name": "Cloudflare",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "Supabase is an open-source Firebase alternative, providing a PostgreSQL database, authentication, instant APIs, and real-time subscriptions.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://supabase.com/docs/reference/api",
+    "confidence": "High",
+    "id": 65,
+    "name": "Supabase",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "Neo4j is a graph database management system, providing a native graph storage and processing engine.",
+    "auth_methods": [
+      "Basic Auth",
+      "Other"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available for AuraDB Free and desktop versions.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://neo4j.com/docs/http-api",
+    "confidence": "High",
+    "id": 66,
+    "name": "Neo4j",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "Snowflake is a cloud-based data warehousing platform, enabling data storage, processing, and analytic solutions.",
+    "auth_methods": [
+      "Other"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "30-day free trial available.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.snowflake.com/en/developer-guide/sql-api",
+    "confidence": "High",
+    "id": 67,
+    "name": "Snowflake",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "MongoDB Atlas is a global cloud database service for modern applications, offering a fully managed MongoDB database.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available for M0 clusters.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://www.mongodb.com/docs/atlas/api",
+    "confidence": "High",
+    "id": 68,
+    "name": "MongoDB Atlas",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "Datadog is a monitoring and security platform for cloud applications, providing end-to-end visibility across infrastructure, applications, and logs.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "14-day free trial available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.datadoghq.com/api/latest",
+    "confidence": "High",
+    "id": 69,
+    "name": "Datadog",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "Sentry is an error monitoring and performance monitoring platform that helps developers diagnose, fix, and optimize the performance of their code.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free developer plan available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.sentry.io/api",
+    "confidence": "High",
+    "id": 70,
+    "name": "Sentry",
+    "category": "Developer, Infra and Data"
+  },
+  {
+    "description": "Notion is a connected workspace for notes, tasks, wikis, and databases.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available for personal use, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.notion.com",
+    "confidence": "High",
+    "id": 71,
+    "name": "Notion",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "Airtable is a low-code platform for building collaborative apps and databases.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://airtable.com/developers/web/api",
+    "confidence": "High",
+    "id": 72,
+    "name": "Airtable",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "Linear is a modern issue tracking tool for high-performance teams.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free for small teams, API access included.",
+    "api_type": "GraphQL",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.linear.app",
+    "confidence": "High",
+    "id": 73,
+    "name": "Linear",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "Jira is a software development tool used by agile teams to plan, track, and release software.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key",
+      "Basic Auth"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available for up to 10 users, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.atlassian.com/cloud/jira/platform/rest",
+    "confidence": "High",
+    "id": 74,
+    "name": "Jira",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "Asana is a work management platform that helps teams organize, track, and manage their work.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developers.asana.com/docs",
+    "confidence": "High",
+    "id": 75,
+    "name": "Asana",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "Monday.com is a work OS that powers teams to run projects and workflows with confidence.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free trial available, API access included with paid plans.",
+    "api_type": "GraphQL",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.monday.com",
+    "confidence": "High",
+    "id": 76,
+    "name": "Monday.com",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "ClickUp is an all-in-one productivity platform that offers tasks, docs, chat, goals, and more.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free forever plan available, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://clickup.com/api",
+    "confidence": "High",
+    "id": 77,
+    "name": "ClickUp",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "Coda is a new doc for teams that blends words, data, and teams into a single flexible surface.",
+    "auth_methods": [
+      "API Key",
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available, API access included.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://coda.io/developers/apis/v1",
+    "confidence": "High",
+    "id": 78,
+    "name": "Coda",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "Smartsheet is a work management platform for collaboration and project management.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "30-day free trial available, API access included with paid plans.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://smartsheet.com/developers/api-documentation",
+    "confidence": "High",
+    "id": 79,
+    "name": "Smartsheet",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "Harvest is a time tracking and invoicing software for businesses.",
+    "auth_methods": [
+      "OAuth2",
+      "Basic Auth"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free 30-day trial available, API access included with paid plans.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://help.getharvest.com/api-v2",
+    "confidence": "High",
+    "id": 80,
+    "name": "Harvest",
+    "category": "Productivity and Project Management"
+  },
+  {
+    "description": "Stripe is a suite of APIs for online payment processing and financial services.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free test mode available, live mode requires account setup and verification.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": true,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://stripe.com/docs/api",
+    "confidence": "High",
+    "id": 81,
+    "name": "Stripe",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "Plaid provides APIs for connecting applications to bank accounts and financial data.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free development environment available, production access requires application review.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://plaid.com/docs/api",
+    "confidence": "High",
+    "id": 82,
+    "name": "Plaid",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "Binance is a cryptocurrency exchange that provides APIs for trading and account management.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "API keys can be generated from user account settings.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://binance-docs.github.io/apidocs",
+    "confidence": "High",
+    "id": 83,
+    "name": "Binance",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "Paygent Connect offers various payment processing solutions for businesses in Japan.",
+    "auth_methods": [
+      "Other"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "Requires contact with sales for integration details and API access.",
+    "api_type": "None Public",
+    "api_breadth": "Narrow",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "No public API documentation or self-serve access; requires sales contact.",
+    "docs_url": "https://www.paygent.co.jp/developer/",
+    "confidence": "Medium",
+    "id": 84,
+    "name": "Paygent Connect",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "iPayX provides AI-powered payment solutions and financial automation.",
+    "auth_methods": [
+      "Other"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "API access and documentation appear to be partner-gated or require direct contact.",
+    "api_type": "None Public",
+    "api_breadth": "Narrow",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "No public API documentation or self-serve access; likely partner-gated.",
+    "docs_url": "https://ipayx.ai/docs",
+    "confidence": "Low",
+    "id": 85,
+    "name": "iPayX",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "QuickBooks provides accounting software and APIs for financial management.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free developer account and sandbox available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.intuit.com/app/developer/qbo/docs/api",
+    "confidence": "High",
+    "id": 86,
+    "name": "QuickBooks",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "Xero is cloud-based accounting software with APIs for integrating financial data.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free developer account and sandbox available.",
+    "api_type": "REST",
+    "api_breadth": "Broad",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.xero.com/documentation",
+    "confidence": "High",
+    "id": 87,
+    "name": "Xero",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "Brex offers corporate credit cards and financial management for businesses.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Developer portal available, API keys can be generated from account settings.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://developer.brex.com",
+    "confidence": "High",
+    "id": 88,
+    "name": "Brex",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "Ramp provides corporate cards, expense management, and bill payments.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Developer documentation and API access details are publicly available.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.ramp.com/developer-guide",
+    "confidence": "High",
+    "id": 89,
+    "name": "Ramp",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "PitchBook provides data and insights on the private and public markets.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "API access requires a PitchBook subscription and likely direct contact for API keys.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Needs Work",
+    "main_blocker": "Requires paid PitchBook subscription and likely sales contact for API access.",
+    "docs_url": "https://docs.pitchbook.com",
+    "confidence": "Medium",
+    "id": 90,
+    "name": "PitchBook",
+    "category": "Finance and Fintech"
+  },
+  {
+    "description": "NotebookLM is an AI-powered research and writing assistant that helps users organize, summarize, and generate content from their sources.",
+    "auth_methods": [
+      "OAuth2"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free to use with a Google account.",
+    "api_type": "None Public",
+    "api_breadth": "None Public",
+    "has_mcp": false,
+    "buildability": "Blocked",
+    "main_blocker": "No public API available.",
+    "docs_url": "https://cloud.google.com/notebooklm/docs",
+    "confidence": "High",
+    "id": 91,
+    "name": "NotebookLM",
+    "category": "AI, Research and Media"
+  },
+  {
+    "description": "Otter.ai provides AI-powered meeting notes, summaries, and real-time transcription.",
+    "auth_methods": [
+      "OAuth2",
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "API access requires a paid business plan or higher. Free tier does not include API access.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": true,
+    "buildability": "Needs Work",
+    "main_blocker": "API access requires a paid business plan.",
+    "docs_url": "https://help.otter.ai/hc/en-us/articles/1500006764421-Otter-ai-API-Documentation",
+    "confidence": "High",
+    "id": 92,
+    "name": "Otter AI",
+    "category": "AI, Research and Media"
+  },
+  {
+    "description": "Fathom is an AI meeting assistant that records, transcribes, summarizes, and highlights key moments from virtual meetings.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "API access is available on paid plans, with a free trial available.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://fathom.video/api",
+    "confidence": "High",
+    "id": 93,
+    "name": "Fathom",
+    "category": "AI, Research and Media"
+  },
+  {
+    "description": "Consensus is an AI search engine that finds and synthesizes findings directly from research papers.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "API access is available with a paid subscription, free trial available.",
+    "api_type": "REST",
+    "api_breadth": "Narrow",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://consensus.app/api",
+    "confidence": "High",
+    "id": 94,
+    "name": "Consensus",
+    "category": "AI, Research and Media"
+  },
+  {
+    "description": "Reducto is an AI-powered tool for redacting sensitive information from documents and images.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available with usage limits, paid plans for higher usage.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://docs.reducto.ai/",
+    "confidence": "High",
+    "id": 95,
+    "name": "Reducto",
+    "category": "AI, Research and Media"
+  },
+  {
+    "description": "Devin is an AI software engineer that can autonomously plan and execute complex engineering tasks.",
+    "auth_methods": [
+      "Other"
+    ],
+    "self_serve": "No",
+    "self_serve_notes": "Currently in private access, requires joining a waitlist.",
+    "api_type": "None Public",
+    "api_breadth": "None Public",
+    "has_mcp": true,
+    "buildability": "Blocked",
+    "main_blocker": "No public API and access is waitlist-gated.",
+    "docs_url": "https://docs.devin.ai/",
+    "confidence": "High",
+    "id": 96,
+    "name": "Devin",
+    "category": "AI, Research and Media"
+  },
+  {
+    "description": "Higgsfield AI is a platform for creating and deploying AI models, with a focus on video generation.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "Access to the API and CLI might require specific credentials or a paid plan, details not fully public.",
+    "api_type": "REST",
+    "api_breadth": "Narrow",
+    "has_mcp": false,
+    "buildability": "Needs Work",
+    "main_blocker": "API documentation is limited and self-serve access details are not clearly outlined for developers.",
+    "docs_url": "https://higgsfield.ai/cli",
+    "confidence": "Medium",
+    "id": 97,
+    "name": "Higgsfield",
+    "category": "AI, Research and Media"
+  },
+  {
+    "description": "Mermaid CLI is a command-line interface for rendering Mermaid diagrams into various image formats.",
+    "auth_methods": [
+      "SDK Only"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Open-source tool, free to use.",
+    "api_type": "SDK Only",
+    "api_breadth": "Narrow",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://github.com/mermaid-js/mermaid-cli",
+    "confidence": "High",
+    "id": 98,
+    "name": "Mermaid CLI",
+    "category": "AI, Research and Media"
+  },
+  {
+    "description": "YouTube Transcript API provides programmatic access to YouTube video transcripts.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Yes",
+    "self_serve_notes": "Free tier available with usage limits, paid plans for higher usage.",
+    "api_type": "REST",
+    "api_breadth": "Narrow",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://transcriptapi.com/docs",
+    "confidence": "High",
+    "id": 99,
+    "name": "YouTube Transcript API",
+    "category": "AI, Research and Media"
+  },
+  {
+    "description": "Grain is an AI meeting assistant that records, transcribes, and summarizes video meetings.",
+    "auth_methods": [
+      "API Key"
+    ],
+    "self_serve": "Partial",
+    "self_serve_notes": "API access is available on paid plans, with a free trial available.",
+    "api_type": "REST",
+    "api_breadth": "Medium",
+    "has_mcp": false,
+    "buildability": "Ready",
+    "main_blocker": null,
+    "docs_url": "https://grain.com/developers",
+    "confidence": "High",
+    "id": 100,
+    "name": "Grain",
+    "category": "AI, Research and Media"
+  }
+]

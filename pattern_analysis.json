@@ -1,0 +1,98 @@
+{
+  "auth_distribution": {
+    "API Key": 79,
+    "OAuth2": 59,
+    "Basic Auth": 6,
+    "Other": 6,
+    "Bot Token": 3,
+    "SDK Only": 2,
+    "None Public": 1
+  },
+  "self_serve_distribution": {
+    "Partial": 13,
+    "Yes": 76,
+    "No": 11
+  },
+  "buildability_distribution": {
+    "Ready": 82,
+    "Blocked": 11,
+    "Needs Work": 7
+  },
+  "mcp_count": 17,
+  "mcp_percentage": 17.0,
+  "by_category": {
+    "CRM and Sales": {
+      "ready": 9,
+      "needs_work": 0,
+      "blocked": 1,
+      "total": 10
+    },
+    "Support and Helpdesk": {
+      "ready": 9,
+      "needs_work": 0,
+      "blocked": 1,
+      "total": 10
+    },
+    "Communications and Messaging": {
+      "ready": 9,
+      "needs_work": 1,
+      "blocked": 0,
+      "total": 10
+    },
+    "Marketing, Ads, Email and Social": {
+      "ready": 10,
+      "needs_work": 0,
+      "blocked": 0,
+      "total": 10
+    },
+    "Ecommerce": {
+      "ready": 7,
+      "needs_work": 1,
+      "blocked": 2,
+      "total": 10
+    },
+    "Data, SEO and Scraping": {
+      "ready": 5,
+      "needs_work": 2,
+      "blocked": 3,
+      "total": 10
+    },
+    "Developer, Infra and Data": {
+      "ready": 10,
+      "needs_work": 0,
+      "blocked": 0,
+      "total": 10
+    },
+    "Productivity and Project Management": {
+      "ready": 10,
+      "needs_work": 0,
+      "blocked": 0,
+      "total": 10
+    },
+    "Finance and Fintech": {
+      "ready": 7,
+      "needs_work": 1,
+      "blocked": 2,
+      "total": 10
+    },
+    "AI, Research and Media": {
+      "ready": 6,
+      "needs_work": 2,
+      "blocked": 2,
+      "total": 10
+    }
+  },
+  "top_blockers": {
+    "API access requires a paid plan after trial.": 2,
+    "Requires paid plan and contact with sales for API access.": 1,
+    "Requires contacting sales for API access and credentials.": 1,
+    "Requires Aircall account (paid plan or trial) to access API.": 1,
+    "Requires contacting sales for access and pricing": 1,
+    "Requires paid Adobe Commerce license for full features, open-source version requires self-hosting and setup.": 1,
+    "No public API documentation or developer program found.": 1,
+    "Requires paid plan (Advanced or Enterprise) or sales contact for API access.": 1,
+    "No public REST API, primarily a command-line tool/library.": 1,
+    "Requires contacting sales for API access.": 1
+  },
+  "total_apps": 100
+}
